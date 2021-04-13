@@ -74,7 +74,7 @@ class _SeekBarState extends State<SeekBar> {
             inactiveTrackColor: Colors.transparent,
           ),
           child: Slider(
-            activeColor: kWarninngColor,
+            activeColor: kPrimaryColor,
             min: 0.0,
             max: widget.duration.inMilliseconds.toDouble(),
             value: min(_dragValue ?? widget.position.inMilliseconds.toDouble(),

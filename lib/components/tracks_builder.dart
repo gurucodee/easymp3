@@ -52,34 +52,33 @@ class _TracksListBuilderState extends State<TracksListBuilder> {
             onLongPress: () {
               print('Baba!');
             },
-            splashColor: kContentColorLightTheme,
-            hoverColor: kContentColorLightTheme,
-            focusColor: kContentColorLightTheme,
-            highlightColor: kContentColorLightTheme,
+            splashColor: kPrimaryColor,
+            // hoverColor: kContentColorLightTheme,
+            // focusColor: kContentColorLightTheme,
+            // highlightColor: kContentColorLightTheme,
             child: Column(
               children: <Widget>[
                 ListTile(
                   leading: Container(
                     decoration: BoxDecoration (
                       borderRadius: BorderRadius.circular(50),
-                      color: kContentColorLightBackground,
+                      color: Theme.of(context).primaryColor,
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.music_note_outlined,
                         size: 30,
-                        color: kPrimaryColor,
                       ),
                     ),
                   ),
                   title: Text(
                     (widget.tracks[index].title).toString().split("(")[0].replaceAll("&quot;", "\"").replaceAll("&amp;", "&"),
-                    style: TextStyle(color: Colors.white),
+                    // style: TextStyle(color: Colors.white),
                   ),
                   subtitle: Text(
                     'Bitrate: ${widget.tracks[index].bpm} Kbps',
-                    style: TextStyle(color: Colors.white38),
+                    // style: TextStyle(color: Colors.white38),
                   ),
                   trailing: Text(
                     '${widget.tracks[index].duration}',

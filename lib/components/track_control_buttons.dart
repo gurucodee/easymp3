@@ -17,7 +17,7 @@ class ControlButtons extends StatelessWidget {
         IconButton(
           icon: Icon(
             Icons.volume_up,
-            color: kSecondaryColor,
+            color: kPrimaryColor,
           ),
           onPressed: () {
             showSliderDialog(
@@ -36,7 +36,6 @@ class ControlButtons extends StatelessWidget {
           builder: (context, snapshot) => IconButton(
             icon: Icon(
               Icons.skip_previous,
-              color: Colors.white,
             ),
             onPressed: player.hasPrevious ? player.seekToPrevious : null,
           ),
@@ -59,7 +58,6 @@ class ControlButtons extends StatelessWidget {
               return IconButton(
                 icon: Icon(
                   Icons.play_arrow,
-                  color: Colors.white,
                 ),
                 iconSize: 64.0,
                 onPressed: player.play,
@@ -68,7 +66,6 @@ class ControlButtons extends StatelessWidget {
               return IconButton(
                 icon: Icon(
                   Icons.pause,
-                  color: Colors.white,
                 ),
                 iconSize: 64.0,
                 onPressed: player.pause,
@@ -77,7 +74,6 @@ class ControlButtons extends StatelessWidget {
               return IconButton(
                 icon: Icon(
                   Icons.replay,
-                  color: Colors.white,
                 ),
                 iconSize: 64.0,
                 onPressed: () => player.seek(Duration.zero,
@@ -91,7 +87,6 @@ class ControlButtons extends StatelessWidget {
           builder: (context, snapshot) => IconButton(
             icon: Icon(
               Icons.skip_next,
-              color: Colors.white,
             ),
             onPressed: player.hasNext ? player.seekToNext : null,
           ),
@@ -100,7 +95,7 @@ class ControlButtons extends StatelessWidget {
           stream: player.speedStream,
           builder: (context, snapshot) => IconButton(
             icon: Text("${snapshot.data?.toStringAsFixed(1)}x",
-                style: TextStyle(fontWeight: FontWeight.bold, color: kSecondaryColor,)),
+                style: TextStyle(fontWeight: FontWeight.bold, color: kPrimaryColor,)),
             onPressed: () {
               showSliderDialog(
                 context: context,

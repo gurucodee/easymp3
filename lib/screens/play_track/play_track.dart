@@ -184,9 +184,7 @@ class _PlayTrackState extends State<PlayTrackScreen> {
 
     return Container(
       child: Scaffold(
-        backgroundColor: kContentColorLightTheme,
         appBar: AppBar(
-          backgroundColor: kContentColorLightTheme,
           title: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -240,13 +238,10 @@ class _PlayTrackState extends State<PlayTrackScreen> {
                             ),
                           ),
                         ),
-                        Text(metadata.album, style: Theme.of(context).textTheme.headline4?.copyWith(
-                          color: Colors.white
-                        )),
+                        Text(metadata.album, style: Theme.of(context).textTheme.headline4),
                         Text(
                           metadata.title,
                           style: Theme.of(context).textTheme.headline6?.copyWith(
-                            color: Colors.white,
                             fontSize: 14.0,
                           ),
                         ),
@@ -258,6 +253,7 @@ class _PlayTrackState extends State<PlayTrackScreen> {
               ControlButtons(
                 _player,
               ),
+              // Track seek bar
               StreamBuilder<Duration?>(
                 stream: _player.durationStream,
                 builder: (context, snapshot) {
@@ -301,8 +297,8 @@ class _PlayTrackState extends State<PlayTrackScreen> {
                       final loopMode = snapshot.data ?? LoopMode.off;
                       const icons = [
                         Icon(Icons.repeat, color: Colors.grey),
-                        Icon(Icons.repeat, color: Colors.orange),
-                        Icon(Icons.repeat_one, color: Colors.orange),
+                        Icon(Icons.repeat, color: kPrimaryColor),
+                        Icon(Icons.repeat_one, color: kPrimaryColor),
                       ];
                       const cycleModes = [
                         LoopMode.off,
@@ -322,8 +318,8 @@ class _PlayTrackState extends State<PlayTrackScreen> {
                   ),
                   Expanded(
                     child: Text(
-                      "repeate",
-                      style: Theme.of(context).textTheme.headline6,
+                      "",
+                      style: Theme.of(context).textTheme.headline6?.copyWith(color: kPrimaryColor),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -333,7 +329,7 @@ class _PlayTrackState extends State<PlayTrackScreen> {
                       final shuffleModeEnabled = snapshot.data ?? false;
                       return IconButton(
                         icon: shuffleModeEnabled
-                            ? Icon(Icons.shuffle, color: Colors.orange)
+                            ? Icon(Icons.shuffle, color: kPrimaryColor)
                             : Icon(Icons.shuffle, color: Colors.grey),
                         onPressed: () async {
                           final enable = !shuffleModeEnabled;

@@ -69,8 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           .textTheme
                           .headline5
                           ?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        // fontWeight: FontWeight.bold,
+                        // color: Colors.white,
                         fontSize: 40.0,
                       ),
                     ),
@@ -80,13 +80,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        SizedBox(height: 50.0,),
                         _homeTracks.isNotEmpty ?
                           TracksListBuilder(tracks: _homeTracks,):
                         Icon(
                           Icons.search_off_sharp,
                           size: 100.0,
-                          color: Colors.white.withOpacity(0.1),
+                          // color: Colors.white.withOpacity(0.1),
                         )
                       ],
                     ),
@@ -94,7 +93,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(height: 15.0,),
                 if (_homeTracks.isNotEmpty)
-                  Text('Results: ${_homeTracks.length}', style: TextStyle(color: kWarninngColor, fontSize: 30.0, fontWeight: FontWeight.w100)),
+                  Text(
+                    'Results: ${_homeTracks.length}',
+                    style: TextStyle(
+                        // color: kWarningColor,
+                        fontSize: 16.0,
+                        // fontWeight: FontWeight.w100
+                    )
+                  ),
                 SizedBox(height: 10.0,),
                 TextField(
                   onSubmitted: (String value) {
@@ -103,9 +109,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   controller: searchBar,
                   style: TextStyle(
                     fontSize: 25.0,
-                    color: Colors.white,
+                    // color: Colors.white,
                   ),
-                  cursorColor: Colors.white,
+                  // cursorColor: Colors.white,
                   decoration: InputDecoration(
                     // fillColor: Color(0xff263238),
                     // filled: false,
@@ -113,15 +119,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.all(
                         Radius.circular(100),
                       ),
-                      borderSide: BorderSide(
-                        color: Colors.white30,
-                      ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(100),
                       ),
-                      borderSide: BorderSide(color: kWarninngColor),
+                      borderSide: BorderSide(color: kWarningColor),
                     ),
                     suffixIcon: IconButton(
                       icon: fetchingSongs
@@ -135,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ) : Icon(
                         Icons.search,
-                        color: Colors.white,
+                        // color: Colors.white,
                       ),
                       color: kPrimaryColor,
                       onPressed: () {
@@ -146,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     border: InputBorder.none,
                     hintText: "Search...",
                     hintStyle: TextStyle(
-                      color: Colors.white,
+                      // color: Colors.white,
                     ),
                     contentPadding: const EdgeInsets.only(
                       left: 18,

@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             Image.asset("assets/images/welcome_image.png"),
             Text(
-              "Welcome to EasyMP3 \n Tracks Streamer",
+              "Welcome to EasyMP3 \n Download App",
               textAlign: TextAlign.center,
               style: Theme.of(context)
                 .textTheme
@@ -24,7 +24,7 @@ class WelcomeScreen extends StatelessWidget {
                 )
             ),
             Text(
-                "Listen to and download your \n favorite track in a few seconds.",
+                "Listen to and download your \n favorite tracks in a few seconds.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   height: 1.5,
