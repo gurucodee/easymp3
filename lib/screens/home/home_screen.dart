@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 15.0,),
+                    SizedBox(height: 40.0,),
                     Text(
                       "EasyMP3",
                       style: Theme.of(context)
