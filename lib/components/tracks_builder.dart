@@ -23,13 +23,13 @@ class _TracksListBuilderState extends State<TracksListBuilder> {
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       itemCount: widget.tracks.length,
-      itemBuilder: (BuildContext ctxt, int index) {
+      itemBuilder: (BuildContext context, int index) {
         return Card(
-          color: Colors.black12,
+          // color: Colors.black12,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
-          elevation: 0,
+          elevation: 1,
           child: InkWell(
             borderRadius: BorderRadius.circular(10.0),
             onTap: () {
