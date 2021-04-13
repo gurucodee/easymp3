@@ -1,9 +1,12 @@
 import 'package:EasyMP3/screens/welcome/welcome_screen.dart';
 import 'package:EasyMP3/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
+  // Hide phone status bar
+  SystemChrome.setEnabledSystemUIOverlays([]);
 }
 
 class MyApp extends StatelessWidget {

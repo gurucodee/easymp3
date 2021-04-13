@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 60.0,),
+                    SizedBox(height: 15.0,),
                     Text(
                       "EasyMP3",
                       style: Theme.of(context)
@@ -74,6 +74,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontSize: 40.0,
                       ),
                     ),
+                    SizedBox(height: 15.0,),
+                    if (_homeTracks.isNotEmpty)
+                      Text(
+                        'Results: ${_homeTracks.length}',
+                        style: TextStyle(
+                          // color: kWarningColor,
+                          fontSize: 16.0,
+                          // fontWeight: FontWeight.w100
+                        )
+                      ),
                   ],
                 ),
                 Expanded(
@@ -91,16 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   )
                 ),
-                SizedBox(height: 15.0,),
-                if (_homeTracks.isNotEmpty)
-                  Text(
-                    'Results: ${_homeTracks.length}',
-                    style: TextStyle(
-                        // color: kWarningColor,
-                        fontSize: 16.0,
-                        // fontWeight: FontWeight.w100
-                    )
-                  ),
                 SizedBox(height: 10.0,),
                 TextField(
                   onSubmitted: (String value) {
