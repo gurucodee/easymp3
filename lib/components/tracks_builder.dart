@@ -19,13 +19,18 @@ class _TracksListBuilderState extends State<TracksListBuilder> {
 
   @override
   Widget build(BuildContext context) {
+
+    final ThemeData _darkTheme = Theme.of(context);
+
     return ListView.builder(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       itemCount: widget.tracks.length,
       itemBuilder: (BuildContext context, int index) {
         return Card(
-          // color: Colors.black12,
+          color: _darkTheme.brightness == Brightness.dark
+              ? Colors.black12
+              : Color(0xFFF1F1F1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
